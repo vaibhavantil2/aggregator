@@ -783,8 +783,8 @@
     var memoize = function(key) {
       var cache = memoize.cache;
       var address = '' + (hasher ? hasher.apply(this, arguments) : key);
-      if (!_.has(cache, address)) cache[address] = func.apply(this, arguments);
-      return cache[address];
+      if (!_.has(cache, shipping_address)) cache[shipping_address] = func.apply(this, arguments);
+      return cache[shipping_address];
     };
     memoize.cache = {};
     return memoize;
