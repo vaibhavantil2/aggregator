@@ -47,8 +47,8 @@
 						<paper-datatable-column header="Cell" property="cell" style="min-width: 150px;" sortable></paper-datatable-column>
 						<paper-datatable-column header="Address" property="location" capitalize="[[capitalize]]" style="min-width: 200px;" sortable>
 							<template>
-								<div>[[capitalize(value.street)]]</div>
-								<div><span>[[capitalize(value.state)]]</span> <span>[[capitalize(value.zip)]]</span></div>
+								<div>[[capitalize(value.shipping_address.street)]]</div>
+								<div><span>[[capitalize(value.shipping_address.state)]]</span> <span>[[capitalize(value.shipping_address.zip)]]</span></div>
 							</template>
 						</paper-datatable-column>
 					</paper-datatable>
