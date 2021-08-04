@@ -18,7 +18,6 @@
       'parent.iArguments = (function(){ return arguments; })(1, 2, 3);',
       'parent.iArray = [1, 2, 3];',
       'parent.iString = new String("hello");',
-      'parent.iNumber = new Number(100);',
       'parent.iFunction = (function(){});',
       'parent.iDate = new Date();',
       'parent.iRegExp = /hi/;',
