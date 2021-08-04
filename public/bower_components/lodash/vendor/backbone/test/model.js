@@ -537,7 +537,6 @@
   QUnit.test('save within change event', function(assert) {
     assert.expect(1);
     var env = this;
-    var model = new Backbone.Model({firstName: 'Taylor', lastName: 'Swift'});
     model.url = '/test';
     model.on('change', function() {
       model.save();
