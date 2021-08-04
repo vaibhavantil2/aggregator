@@ -25,7 +25,6 @@
     func = _.bind(func, this, 'curly');
     assert.equal(func(), 'hello: curly', 'the function was completely applied in advance');
 
-    func = function(salutation, firstname, lastname) { return salutation + ': ' + firstname + ' ' + lastname; };
     func = _.bind(func, this, 'hello', 'moe', 'curly');
     assert.equal(func(), 'hello: moe curly', 'the function was partially applied in advance and can accept multiple arguments');
 
