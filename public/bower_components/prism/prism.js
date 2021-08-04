@@ -20,7 +20,7 @@ var _self = (typeof window !== 'undefined')
 var Prism = (function(){
 
 // Private helper vars
-var lang = /\blang(?:uage)?-(\w+)\b/i;
+var lang = /\blang(?:)?-(\w+)\b/i;
 var uniqueId = 0;
 
 var _ = _self.Prism = {
