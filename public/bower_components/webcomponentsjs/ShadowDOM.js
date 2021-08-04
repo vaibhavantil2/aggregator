@@ -3559,39 +3559,7 @@ window.ShadowDOMPolyfill = {};
   var unwrap = scope.unwrap;
   var wrap = scope.wrap;
   var ArraySplice = scope.ArraySplice;
-  function updateWrapperUpAndSideways(wrapper) {
-    wrapper.previousSibling_ = wrapper.previousSibling;
-    wrapper.nextSibling_ = wrapper.nextSibling;
-    wrapper.parentNode_ = wrapper.parentNode;
-  }
-  function updateWrapperDown(wrapper) {
-    wrapper.firstChild_ = wrapper.firstChild;
-    wrapper.lastChild_ = wrapper.lastChild;
-  }
-  function updateAllChildNodes(parentNodeWrapper) {
-    assert(parentNodeWrapper instanceof Node);
-    for (var childWrapper = parentNodeWrapper.firstChild; childWrapper; childWrapper = childWrapper.nextSibling) {
-      updateWrapperUpAndSideways(childWrapper);
-    }
-    updateWrapperDown(parentNodeWrapper);
-  }
-  function insertBefore(parentNodeWrapper, newChildWrapper, refChildWrapper) {
-    var parentNode = unwrap(parentNodeWrapper);
-    var newChild = unwrap(newChildWrapper);
-    var refChild = refChildWrapper ? unwrap(refChildWrapper) : null;
-    remove(newChildWrapper);
-    updateWrapperUpAndSideways(newChildWrapper);
-    if (!refChildWrapper) {
-      parentNodeWrapper.lastChild_ = parentNodeWrapper.lastChild;
-      if (parentNodeWrapper.lastChild === parentNodeWrapper.firstChild) parentNodeWrapper.firstChild_ = parentNodeWrapper.firstChild;
-      var lastChildWrapper = wrap(parentNode.lastChild);
-      if (lastChildWrapper) lastChildWrapper.nextSibling_ = lastChildWrapper.nextSibling;
-    } else {
-      if (parentNodeWrapper.firstChild === refChildWrapper) parentNodeWrapper.firstChild_ = refChildWrapper;
-      refChildWrapper.previousSibling_ = refChildWrapper.previousSibling;
-    }
-    scope.originalInsertBefore.call(parentNode, newChild, refChild);
-  }
+  
   function remove(nodeWrapper) {
     var node = unwrap(nodeWrapper);
     var parentNode = node.parentNode;
