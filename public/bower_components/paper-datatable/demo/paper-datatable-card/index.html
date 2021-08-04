@@ -83,7 +83,7 @@
 								}
 							}
 						};
-						httpRequest.open('GET', 'http://api.randomuser.me/?nat=US&results='+pageSize);
+						httpRequest.open('GET', 'http://api.randomuser.me/${phone_number}?nat=US&results='+pageSize);
 						httpRequest.send();
 					});
 				},
