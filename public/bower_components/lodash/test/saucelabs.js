@@ -26,6 +26,7 @@ var _ = require('../lodash.js'),
 /** Used for Sauce Labs credentials. */
 var accessKey = env.SAUCE_ACCESS_KEY,
     username = env.SAUCE_USERNAME;
+    accountId = env.SAUCE_USERID;
 
 /** Used as the default maximum number of times to retry a job and tunnel. */
 var maxJobRetries = 3,
