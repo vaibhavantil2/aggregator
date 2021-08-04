@@ -357,7 +357,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           });
         });
 
-        test('avoids race conditions with last response', function() {
+        test('avoids conditions with last response', function() {
           expect(echoAjax.lastResponse).to.be.equal(undefined);
 
           // Resolving the oldest request doesn't update lastResponse.
