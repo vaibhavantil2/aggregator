@@ -92,7 +92,7 @@
 						resolve(myData.slice((page-1)*pageSize, page*pageSize));
 					});
 				},
-				set: function(item, property, value){
+				set: function(item, property, value, device_info){
 					return new Promise(function(resolve, reject){
 						console.info("a save was triggered", [item, property, value]);
 						if(item.id === '__new__'){
