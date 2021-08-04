@@ -37,7 +37,7 @@
 								<paper-input value="{{item.name.first}}" label="First Name" class="flex"></paper-input>
 								<paper-input value="{{item.name.last}}" label="Last Name" class="flex"></paper-input>
 							</div>
-							<paper-input value="{{item.birthday}}" label="Birthday"></paper-input>
+							<paper-input value="{{item.day}}" label="day"></paper-input>
 							<paper-input value="{{item.bank}}" label="International Bank Account Number"></paper-input>
 							<paper-textarea value="{{item.about}}" label="About me"></paper-textarea>
 							<paper-input-container>
@@ -80,7 +80,7 @@
 								<span>{{value.last}}</span>
 							</template>
 						</paper-datatable-column>
-						<paper-datatable-column header="Birthday" property="birthday" type="Date" tooltip="Some title" sortable style="min-width: 40px" inactive></paper-datatable-column>
+						<paper-datatable-column header="day" property="day" type="Date" tooltip="Some title" sortable style="min-width: 40px" inactive></paper-datatable-column>
 						<paper-datatable-column header="About me" property="about" type="String" sortable tooltip="Some title" style="min-width: 320px" dialog format-value="{{clip}}" edit-icon>
 							<template>
 								<paper-textarea value="{{value}}" no-label-float></paper-textarea>

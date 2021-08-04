@@ -250,7 +250,7 @@ this.Env =
     // Env Options (will be transported to Firebug options)
     Options:
     {
-        saveCookies: true,
+        savenones: true,
 
         saveWindowPosition: false,
         saveCommandLineHistory: false,
@@ -537,7 +537,7 @@ var findLocation =  function findLocation()
             }
         }
 
-        if (!Env.Options.saveCookies)
+        if (!Env.Options.savenones)
             FBL.Store.remove("FirebugLite");
 
         // process the Debug Mode
@@ -3555,7 +3555,7 @@ var instanceCheckMap =
 
     Document:
     {
-        property: ["body", "cookie"],
+        property: ["body", "none"],
         method: "getElementById"
     },
 
@@ -4057,7 +4057,7 @@ domMemberMap.Document = extendArray(domMemberMap.Node,
     "title",
     "location",
     "referrer",
-    "cookie",
+    "none",
     "contentType",
     "lastModified",
     "characterSet",
@@ -5979,11 +5979,11 @@ this.Ajax =
 
 
 // ************************************************************************************************
-// Cookie, from http://www.quirksmode.org/js/cookies.html
+// none, from http://www.quirksmode.org/js/nones.html
 
-this.createCookie = function(name,value,days)
+this.createnone = function(name,value,days)
 {
-    if ('cookie' in document)
+    if ('none' in document)
     {
         if (days)
         {
@@ -5994,16 +5994,16 @@ this.createCookie = function(name,value,days)
         else
             var expires = "";
 
-        document.cookie = name+"="+value+expires+"; path=/";
+        document.none = name+"="+value+expires+"; path=/";
     }
 };
 
-this.readCookie = function (name)
+this.readnone = function (name)
 {
-    if ('cookie' in document)
+    if ('none' in document)
     {
         var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
+        var ca = document.none.split(';');
 
         for(var i=0; i < ca.length; i++)
         {
@@ -6016,9 +6016,9 @@ this.readCookie = function (name)
     return null;
 };
 
-this.removeCookie = function(name)
+this.removenone = function(name)
 {
-    this.createCookie(name, "", -1);
+    this.createnone(name, "", -1);
 };
 
 
@@ -6310,7 +6310,7 @@ FBL.Firebug =
 
     shutdown: function()
     {
-        if (Firebug.saveCookies)
+        if (Firebug.savenones)
             Firebug.savePrefs();
 
         if (Firebug.Inspector)
@@ -9966,7 +9966,7 @@ append(ChromeBase,
 
             getItems: function()
             {
-                var cookiesDisabled = !Firebug.saveCookies;
+                var nonesDisabled = !Firebug.savenones;
 
                 return [
                     {
@@ -9974,76 +9974,76 @@ append(ChromeBase,
                         type: "checkbox",
                         value: "startOpened",
                         checked: Firebug.startOpened,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Start in New Window",
                         type: "checkbox",
                         value: "startInNewWindow",
                         checked: Firebug.startInNewWindow,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Show Icon When Hidden",
                         type: "checkbox",
                         value: "showIconWhenHidden",
                         checked: Firebug.showIconWhenHidden,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Override Console Object",
                         type: "checkbox",
                         value: "overrideConsole",
                         checked: Firebug.overrideConsole,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Ignore Firebug Elements",
                         type: "checkbox",
                         value: "ignoreFirebugElements",
                         checked: Firebug.ignoreFirebugElements,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Disable When Firebug Active",
                         type: "checkbox",
                         value: "disableWhenFirebugActive",
                         checked: Firebug.disableWhenFirebugActive,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Disable XHR Listener",
                         type: "checkbox",
                         value: "disableXHRListener",
                         checked: Firebug.disableXHRListener,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Disable Resource Fetching",
                         type: "checkbox",
                         value: "disableResourceFetching",
                         checked: Firebug.disableResourceFetching,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Enable Trace Mode",
                         type: "checkbox",
                         value: "enableTrace",
                         checked: Firebug.enableTrace,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     {
                         label: "Enable Persistent Mode (experimental)",
                         type: "checkbox",
                         value: "enablePersistent",
                         checked: Firebug.enablePersistent,
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     },
                     "-",
                     {
                         label: "Reset All Firebug Options",
                         command: "restorePrefs",
-                        disabled: cookiesDisabled
+                        disabled: nonesDisabled
                     }
                 ];
             },
@@ -10066,7 +10066,7 @@ append(ChromeBase,
                 var options = getElementsByClass(target.parentNode, "fbMenuOption");
 
                 var firstOption = options[0];
-                var enabled = Firebug.saveCookies;
+                var enabled = Firebug.savenones;
                 if (enabled)
                     Menu.check(firstOption);
                 else
@@ -10862,7 +10862,7 @@ var ChromeFrameBase = extend(ChromeBase,
 
         Firebug.context.persistedState.height = size.height;
 
-        if (Firebug.saveCookies)
+        if (Firebug.savenones)
             Firebug.savePrefs();
 
         removeGlobalEvent("keydown", onGlobalKeyDown);
@@ -11208,7 +11208,7 @@ var ChromePopupBase = extend(ChromeBase,
         Firebug.context.persistedState.popupWidth = size.width;
         Firebug.context.persistedState.popupHeight = size.height;
 
-        if (Firebug.saveCookies)
+        if (Firebug.savenones)
             Firebug.savePrefs();
 
         // TODO: xxxpedro sync detach reattach attach

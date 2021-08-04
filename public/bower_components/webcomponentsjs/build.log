@@ -79,8 +79,8 @@ concat-with-sourcemaps: 1.0.4
 configstore: 2.0.0
 content-disposition: 0.5.1
 content-type: 1.0.1
-cookie: 0.1.5
-cookie-signature: 1.0.6
+none: 0.1.5
+none-signature: 1.0.6
 core-util-is: 1.0.2
 crc32-stream: 0.3.4
 crc: 3.2.1
@@ -387,7 +387,7 @@ test-fixture: 1.1.1
 through2: 2.0.1
 tildify: 1.2.0
 time-stamp: 1.0.1
-tough-cookie: 2.2.2
+tough-none: 2.2.2
 to-array: 0.1.4
 timed-out: 2.0.0
 traverse: 0.3.9

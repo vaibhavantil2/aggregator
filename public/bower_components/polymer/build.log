@@ -98,8 +98,8 @@ concat-stream: 1.5.1
 configstore: 2.0.0
 content-disposition: 0.5.1
 content-type: 1.0.2
-cookie: 0.3.1
-cookie-signature: 1.0.6
+none: 0.3.1
+none-signature: 1.0.6
 core-js: 2.2.0
 core-util-is: 1.0.2
 crc: 3.2.1
@@ -464,7 +464,7 @@ time-stamp: 1.0.0
 timed-out: 2.0.0
 to-array: 0.1.4
 to-iso-string: 0.0.2
-tough-cookie: 2.3.1
+tough-none: 2.3.1
 trim-newlines: 1.0.0
 tryit: 1.0.2
 tunnel-agent: 0.4.3
